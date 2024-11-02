@@ -48,6 +48,23 @@ export default function Home() {
                 }
             </CardContainer>
 
+            <CardContainer titulo="Em Alta">
+                {
+                    filmesTrending
+                        .map(filme => (
+                            <MovieCard key={filme.id} {...filme} />
+                        ))
+                }
+            </CardContainer>
+
+            <CardContainer titulo="Em Breve">
+                {
+                    filmesUpcoming
+                        .map(filme => (
+                            <MovieCard key={filme.id} {...filme} />
+                        ))
+                }
+            </CardContainer>
         </>
     )
 }
