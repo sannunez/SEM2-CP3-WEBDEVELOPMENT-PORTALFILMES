@@ -37,9 +37,11 @@ export default function Home() {
         fetchMovies();
     }, [])
 
+ 
     return (
         <>
-            <CardContainer titulo="Populares">
+        <div className="max-w-[90%] pt-5 my-0 mx-[auto]">
+            <CardContainer titulo="POPULARES">
                 {
                     filmesPopulares
                         .map(filme => (
@@ -48,7 +50,7 @@ export default function Home() {
                 }
             </CardContainer>
 
-            <CardContainer titulo="Em Alta">
+            <CardContainer titulo="EM ALTA">
                 {
                     filmesTrending
                         .map(filme => (
@@ -57,7 +59,7 @@ export default function Home() {
                 }
             </CardContainer>
 
-            <CardContainer titulo="Em Breve">
+            <CardContainer titulo="EM BREVE">
                 {
                     filmesUpcoming
                         .map(filme => (
@@ -65,6 +67,7 @@ export default function Home() {
                         ))
                 }
             </CardContainer>
+        </div>
         </>
     )
 }

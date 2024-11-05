@@ -12,20 +12,24 @@ export default function Header() {
 
     return (
         <>
-            <header className="bg-purple-800 flex text-white justify-around h-14 items-center">
-                <div>
-                    <h1 className="font-bold">Portal Filmes</h1>
+            <header className="w-[100%] h-[70px] justify-center bg-black flex text-white  mx-auto border-b-[1px] border-[#ffffffb4]">
+                <div className="flex justify-between items-center w-[90%]">
+                    <div>
+                        <img className="w-[300px]" src="../PortalLogo.png" alt="PORTAL FILMES" />
+                    </div>
+                    <div className="flex gap-32 items-center">
+                        <nav>
+                            <ul className="flex gap-4">
+                                <li><NavLink to="/">Home</NavLink></li>
+                                <li><NavLink to="/movies">Filmes</NavLink></li>
+                                <li><NavLink to="/genre">Gêneros</NavLink></li>
+                                <li><NavLink to="/contato">Contato</NavLink></li>
+                                {isLogged && <li><NavLink to="/settings">Configurações</NavLink></li>}
+                            </ul>
+                        </nav>
+                        <Login isLogged={isLogged} handleLogin={handleLogin} />
+                    </div>
                 </div>
-                <nav>
-                    <ul className="flex gap-4">
-                        <li><NavLink to="/">Home</NavLink></li>
-                        <li><NavLink to="/movies">Filmes</NavLink></li>
-                        <li><NavLink to="/genre">Gêneros</NavLink></li>
-                        <li><NavLink to="/contato">Contato</NavLink></li>
-                        {isLogged && <li><NavLink to="/settings">Configurações</NavLink></li>}
-                    </ul>
-                </nav>
-                <Login isLogged={isLogged} handleLogin={handleLogin} />
             </header>
         </>
     )
